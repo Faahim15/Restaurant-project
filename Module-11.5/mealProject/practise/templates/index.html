@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<div class="card-container" style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+    {% for item in meals %}
+        <div class="card" style="width: 18rem; margin-bottom: 20px;">
+            <img class="card-img-top" src="{{ item.strMealThumb }}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.strMeal }}</h5>
+                <p class="card-text">{{item.description}}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

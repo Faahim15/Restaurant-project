@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 50px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+    tr {
+        transition: background-color 0.3s;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    td {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1, h2 {
+        padding: 15px 0;
+    }
+
+    </style>
+</head>
+
+
+<body>
+    <h1>TEMPLATES FILTERING PAGE</h1> 
+    <h2>Filters Names</h2>
+
+    <table>
+        <tbody>
+            <tr>
+                <td>Add</td>
+                <td>length</td>
+                <td>capfirst</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>cut</td>
+                <td>random</td>
+            </tr>
+            <tr>
+                <td>time</td>
+                <td>timesince</td>
+                <td>slice</td>
+                
+            </tr>
+            <tr>
+                <td>title </td>
+                <td>center</td>
+                <td>make_list</td>
+            </tr>
+            <tr>
+                <td>default</td>
+                <td>upper</td>
+                <td>wordcount</td>
+            </tr>
+            <tr>
+                <td>dicsort</td>
+                <td>divisibleby</td>
+                <td>filesizeformat</td>
+            </tr>
+            <tr>
+                <td>truncatechars</td>
+                <td>striptags</td>
+                <td>first</td>
+            </tr>
+            <tr>
+                <td>last</td>
+                <td>join</td>
+                <td>linenumbers</td>
+            </tr>
+            
+        </tbody>
+    </table> 
+
+    <!-- After Using filtering --> 
+
+   
+    <table>
+          <h2>Uses of FILTERS</h2>
+        <tbody>
+            <tr>
+                <td> <mark>Originial:{{price}}</mark> <br>
+                    Updated: {{price | add:100}}</td>
+                <td><mark>Originial:{{tags}}</mark> <br>
+                    Updated:{{ tags|length }} </td>
+                <td><mark>Originial:{{string}}</mark> <br>
+                    Updated:{{ string | capfirst }} </td>
+            </tr>
+            <tr>
+                <td><mark>Originial:{{birthday}}</mark> <br>
+                    Updated: {{ birthday|date:"F j, Y" }}</td>
+                <td><mark>Originial:{{message}}</mark> <br>
+                    Updated: {{ message | cut:" " }}.</td>
+                <td><mark>Originial:{{tags}}</mark> <br>
+                    Updated: {{ tags|random }}</td>
+            </tr>
+            <tr>
+                <td><mark>Originial:{{birthday}}</mark> <br>
+                    Updated: {{ birthday | time:"H:i" }}</td>
+                <td><mark>Originial:{{birthday}}</mark> <br>
+                    Updated: {{birthday | timesince}}</td>
+                <td><mark>Originial:{{tags}}</mark> <br>
+                    Updated: {{ tags|slice:":2" }}
+                </td>
+            </tr>
+            <tr>
+                <td><mark>Originial:{{description}}</mark> <br>
+                    Updated: {{ description|title }}
+                </td>
+                <td><mark>Originial:{{description}}</mark> <br>
+                    Updated: {{description | center:"15" }}</td>
+                <td><mark>Originial:{{string}}</mark> <br>
+                    Updated: {{ string | make_list }}</td>
+            </tr>
+            <tr>
+                <td><mark>Originial:{{empty}}</mark> <br>
+                    Updated: {{empty | default:'Nothing'}}</td>
+                <td><mark>Originial:{{product}}</mark> <br>
+                    Updated: {{product | upper}}</td>
+                <td><mark>Originial:{{description}}</mark> <br>
+                    Updated: {{description | wordcount}}</td>
+            </tr>
+            <tr>
+                <td><mark>Originial:{{lst}}</mark> <br>
+                    Updated: {{ lst | dictsort:"name" }}</td>
+                <td><mark>Originial:{{quatity}}</mark> <br>
+                    Updated: {{ quantity | divisibleby:"3" }}</td>
+                <td><mark>Originial:{{value}}</mark> <br>
+                    Updated: {{value | filesizeformat}}</td>
+            </tr>
+            <tr>
+                <td><mark>Originial:{{description}}</mark> <br>
+                    Updated: {{ description | truncatechars:15 }}</td>
+                <td><mark>Originial:{{striptags}}</mark> <br>
+                    Updated: {{striptags | striptags}}</td>
+                <td><mark>Originial:{{tags}}</mark> <br>
+                    Updated: {{tags | first}}</td>
+            </tr>
+            <tr>
+                <td><mark>Originial:{{tags}}</mark> <br>
+                    Updated: {{tags | last}}</td>
+                <td><mark>Originial:{{tags}}</mark> <br>
+                    Updated: {{tags | join:','}}</td>
+                <td><mark>Originial:{{string}}</mark> <br>
+                    Updated: {{string | linenumbers}}</td>
+            </tr>
+           
+        </tbody>
+    </table> 
+
+</body>
+</html>

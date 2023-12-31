@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+{% block content%}
+ 
+<div style = "display: flex; flex-wrap: wrap; justify-content: space-around; margin: 20px; gap:20px;"> 
+    {% for item in categories%}
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{item.strCategoryThumb}}" alt="Card image cap">
+        <div class="card-body">
+          <span>Meal ID: {{item.idCategory}}</span>
+          <h5 class="card-title">{{item.strCategory}}</h5>
+          <p class="card-text">{{item.strCategoryDescription|truncatechars:50 }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+
+
+{%endblock%}
